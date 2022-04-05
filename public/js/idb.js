@@ -1,3 +1,5 @@
+const indexedDB = window.indexedDB;
+
 let db;
 const request = indexedDB.open("budget_tracker", 1);
 
@@ -58,4 +60,4 @@ function uploadBudget() {
   };
 }
 
-window.addEventListener("online", uploadItem);
+window.addEventListener("online", uploadBudget);
