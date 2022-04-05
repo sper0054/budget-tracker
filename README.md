@@ -8,7 +8,7 @@ This back-end application allows users to connect with friends to share their th
 ## How it looks
 Videos walking through functionality using Insomnia, can be downloaded raw and are found in the ![videos folder](https://github.com/sper0054/social_network_api/tree/main/videos)
 
-![ScreenShot](https://github.com/sper0054/social_network_api/blob/main/insomnia%20snapshot.png)
+![ScreenShot](https://github.com/sper0054/budget-tracker/blob/main/budgettrackerscreenshot.png)
 
 ## Installation <a name="installation"></a>
 This requires MongoDB, Mongoose, Express.js, Node.js, and Insomnia to test the API.
