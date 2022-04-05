@@ -1,5 +1,5 @@
 let db;
-const request = indexedDB.open("budget", 1);
+const request = indexedDB.open("budget_tracker", 1);
 
 request.onupgradeneeded = function (event) {
   const db = event.target.result;
@@ -9,7 +9,7 @@ request.onupgradeneeded = function (event) {
 request.onsuccess = function (event) {
   db = event.target.result;
   if (navigator.online) {
-    uploadItem(); //uploadPizza
+    uploadBudget(); 
   }
 };
 
@@ -20,16 +20,16 @@ request.onerror = function (event) {
 function saveRecord(record) {
   const transaction = db.transaction(["new_budget"], "readwrite");
   console.log(transaction);
-  const ItemObjectStore = transaction.objectStore("new_budget"); //pizzaobjectstore
+  const BudgetObjectStore = transaction.objectStore("new_budget"); 
 
-  ItemObjectStore.add(record); //pizzaObjectStore
+  BudgetObjectStore.add(record);
 }
 
-function uploadItem() { //uploadPizza
+function uploadBudget() { 
   const transaction = db.transaction(["new_budget"], "readwrite");
-  const itemObjectStore = transaction.objectStore("new-budget"); //pizzaobjectstore
+  const BudgetObjectStore = transaction.objectStore("new_budget"); 
 
-  const getAll = itemObjectStore.getAll(); //pizzaobjectstore
+  const getAll = BudgetObjectStore.getAll();
 
   getAll.onsuccess = function () {
     if (getAll.result.length > 0) {
@@ -46,9 +46,9 @@ function uploadItem() { //uploadPizza
           if (serverResponse.message) {
             throw new Error(serverResponse);
           }
-          const transaction = db.transaction(["newBudget"], "readwrite");
-          const itemObjectStore = transaction.objectStore("newBudget");
-          itemObjectStore.clear();
+          const transaction = db.transaction(["new_budget"], "readwrite");
+          const BudgetObjectStore = transaction.objectStore("new_budget");
+          BudgetObjectStore.clear(); 
           alert("All transactions submitted");
         })
         .catch((err) => {
