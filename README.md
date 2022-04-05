@@ -10,7 +10,7 @@ Budget Tracker allows users to track their budgets by adding deposits and subtra
 https://rocky-atoll-65703.herokuapp.com/
 
 ## Demo
-
+A video demo can be downloaded and viewed: https://github.com/sper0054/budget-tracker/blob/main/budgettrackerdemo.mov
 
 ## Acknowledgments
 This is the week 19 challenge project of Michigan St. full-stack web development coding bootcamp.
